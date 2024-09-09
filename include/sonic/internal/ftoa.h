@@ -1046,10 +1046,10 @@ sonic_static_noinline int F64toa(char* out, double fp) {
       *p++ = '.';
       *p++ = '0';
 #if SONIC_UES_EXPONENT
-        if (exp != 0) {
-            *p++ = 'E';
-            p = U64toa(p, exp);
-        }
+      if (exp != 0) {
+        *p++ = 'E';
+        p = U64toa(p, exp);
+      }
 #endif
       return p - out;
     }
@@ -1067,7 +1067,7 @@ sonic_static_noinline int F64toa(char* out, double fp) {
   bool exp_fmt = sci_exp != 0;
 #else
   bool exp_fmt = sci_exp < -6 || sci_exp > 20;
-#endif 
+#endif
   bool has_dot = dot < cnt;
 
   if (exp_fmt) {
