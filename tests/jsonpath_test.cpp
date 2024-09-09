@@ -41,6 +41,7 @@ TEST(JsonPath, RootIdentifier) {
 
   // number
   TestOk("123  ", "$", "123");
+  TestOk("100000000.0", "$", "1.0E8");
 
   // string
   TestOk("\"123\"  ", "$", "123");
